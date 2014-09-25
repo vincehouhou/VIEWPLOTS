@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      h1 {text-decoration:underline;}
+      span,img
+      {
+      font-size:large;
+      border:2px solid blue;
+      width:1000px;
+      padding:1px;
+      margin:5ex
+      }
+      #input-file,#sort-order,#search-item,#search-group
+      {
+      width:200px;
+      padding:1px;
+      margin:1ex
+      }
+      
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+    <script src="helper.js"></script>
+    <script src="functions.js"></script>
+    <script type = "text/javascript">
+
+      function initialize() {
+	[initializeInput,
+         sortdata,
+	 searchdata,						   
+         groupdata
+        ].run();
+      }						   
+							   
+      $(document).ready(initialize);
+
+    </script>
+  </head>
+
+
+  <body>
+    
+    <h1 id="Bivariate Plot">Bivariate Plot</h1>
+
+    <input id="input-file" type="file" />
+    <br/>
+
+    <select id="sort-order" name="options">
+      <option value="" selected="selected">Sort By</option>
+      <option value="var">Alphabetically</option>
+      <option value="KS">KS</option>
+      <option value="Tree_Importance">Tree Importance</option>
+    </select>
+    <br/>
+
+    <input type="search" name="search" id="search-item" value="" placeholder="Search Item"/>
+    <br/>
+   
+    <input type="search" name="search" id="search-group" value="" placeholder="Search Group"/>   
+    <br/>
+
+    <div id="imgNames" class="content"></div>
+  </body>
+</html>
